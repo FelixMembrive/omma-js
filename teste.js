@@ -49,13 +49,16 @@ const deletarReceita = (idDeletar = 0) => {
     idSplice = idDeletar - 1
 }
 
-
-
-deletarReceita(6)
-
-let verificacao = (10 == 10)
-
 console.log("------------------------------------------------------------------------");;
 console.log("Lista de Receitas com o id passado deletado");
 console.log(listaDeReceitas)
-console.log(verificacao)
+
+// listaDeReceitas.find({ id: 1 })
+
+const keys = listaDeReceitas.keys();
+let text = "";
+for (let x of keys) {
+    text += x + "<br>";
+}
+
+console.log(text)
