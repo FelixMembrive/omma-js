@@ -45,14 +45,17 @@ console.log("Lista de Receitas com a 2ª e 3ª receitas Cadastradas");
 console.log(listaDeReceitas)
 
 
-const deletarReceita = (id = 0) => {
-    idSplice = id - 1
-    listaDeReceitas.splice(idSplice, 1)
+const deletarReceita = (idDeletar = 0) => {
+    idSplice = idDeletar - 1
 }
 
+
+
 deletarReceita(6)
+
+let verificacao = (10 == 10)
 
 console.log("------------------------------------------------------------------------");;
 console.log("Lista de Receitas com o id passado deletado");
 console.log(listaDeReceitas)
-console.log(qtdReceitas)
+console.log(verificacao)
