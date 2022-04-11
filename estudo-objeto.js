@@ -36,17 +36,35 @@ const listaDeReceitas = [{
     },
 ]
 
-console.log(
-    listaDeReceitas[2].titulo
-);
+// console.log(
+//     listaDeReceitas[2].titulo
+// );
 
-function prorpiedadePorID(id, propriedade) {
-    listaDeReceitas[id].(propriedade)
-    const indexReceita = listaDeReceitas.map(function(o) { return o.id; }).indexOf(id);
-    console.log(id, indexReceita);
+function prorpiedadePorID(idReceita, propriedade) {
+    // listaDeReceitas[id].(propriedade)
+    var indexReceita = listaDeReceitas.map(function(o) { return o.id; }).indexOf(idReceita);
+    console.log(idReceita, indexReceita, propriedade);
+    console.log(typeof listaDeReceitas[indexReceita].titulo)
+    console.log(typeof propriedade)
+    console.log(listaDeReceitas[1].titulo)
+    console.log(listaDeReceitas[1])
+    console.log(listaDeReceitas[indexReceita])
+    console.log(listaDeReceitas[indexReceita].prorpiedade)
+
 }
 
-prorpiedadePorID(102, titulo)
+prorpiedadePorID(102, "titulo")
+
+// const indexReceita = listaDeReceitas.map(function(o) { return o.titulo; }).indexOf("Ovo frito");
+// console.log(indexReceita);
+
+// const indexReceita = listaDeReceitas.map(function(o) { return o.id; }).indexOf(102);
+
+// console.log(indexReceita)
+
+
+
+
 
 
 
