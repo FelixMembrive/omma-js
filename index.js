@@ -1,18 +1,16 @@
 function exibirReceitas() {
-    for (let i = 0; i < listaDeReceitas.length; i++) {
-        const receita = listaDeReceitas[i];
-
-        console.log("--------------------------------");
-        console.log(`Título: ${receita.titulo}`);
-
-        console.log("Ingredientes:");
-        for (let j = 0; j < receita.ingredientes.length; j++) {
-            console.log(`- ${receita.ingredientes[j]}`);
-        }
-
-        console.log("É vegano? ", receita.vegano ? "Sim" : "Não");
-        console.log("--------------------------------");
-    }
+    console.log("------------------------------------------------------------------------");
+    console.log("Receitas Cadastradas:");
+    console.log("------------------------------------------------------------------------");
+    listaDeReceitas.forEach((receita) => {
+        console.log(receita.titulo)
+        console.log("Lista de Ingredientes:");
+        receita.ingredientes.forEach((ingrediente) => {
+            console.log(`   - ${ingrediente}`)
+        })
+        console.log(`Vegano: ${receita.vegano ? "Sim" : "Não"}`);
+        console.log("------------------------------------------------------------------------");
+    })
 }
 
 console.log("------------------------------------------------------------------------");
@@ -65,7 +63,7 @@ cadastrarReceita(
 exibirReceitas()
 
 console.log("------------------------------------------------------------------------");
-console.log("Lista de Receitas com o id(s) existente(s) deletado(s)");
+console.log("Lista de Receitas com os id(s) existente(s) deletado(s)");
 console.log("------------------------------------------------------------------------");
 
 function deletarReceita(idDeletar) {
@@ -78,54 +76,18 @@ function deletarReceita(idDeletar) {
         console.log("Receita exluída")
     }
 }
-
-deletarReceita(2)
 deletarReceita(7)
-
 exibirReceitas()
 
-// const [{ id, titulo, preparo }] = listaDeReceitas
-// console.log(titulo])
-
-// const exibirTitulo = listaDeReceitas.map(function(o) { return o.titulo; }).indexOf(1);
-
-// const [{id, titulo, preparo}] = listaDeReceitas
-
-
-
-// console.log(exibirTitulo)
-
-// console.log(
-//     listaDeReceitas[1].dificuldade
-// );
-
-
-// function buscarReceita (termo) {
-//     return pessoa.address.indexOf('Arizon') != -1
-
-// }
-
 console.log("------------------------------------------------------------------------");
+console.log("Buscar");
 console.log("------------------------------------------------------------------------");
 
 const buscarReceita = (termo) => {
-    return listaDeReceitas.filter((receita) => {
+    const resultadoBusca = listaDeReceitas.filter((receita) => {
         return receita.titulo.indexOf(termo) != -1
     })
+    console.log(resultadoBusca);
 }
 
-console.log(buscarReceita("Fubá"));
-// buscarReceita("Bolo")
-
-
-
-// const buscarReceita = (termo) => {
-//     const resultadoBusca = listaDeReceitas.
-//     return listaDeReceitas.titulo.indexOf(termo) != -1
-//     console.log(buscarReceita);
-// })
-
-// buscarReceita("Bolo")
-// const pessoasQueMoramNoArizona = pessoas.filter((pessoa) => {
-//     return pessoa.address.indexOf('Arizon') != -1
-// })
+buscarReceita("Quente")
