@@ -98,34 +98,3 @@ exibirReceitas()
 // console.log(
 //     listaDeReceitas[1].dificuldade
 // );
-
-
-// function buscarReceita (termo) {
-//     return pessoa.address.indexOf('Arizon') != -1
-
-// }
-
-console.log("------------------------------------------------------------------------");
-console.log("------------------------------------------------------------------------");
-
-const buscarReceita = (termo) => {
-    return listaDeReceitas.filter((receita) => {
-        return receita.titulo.indexOf(termo) != -1
-    })
-}
-
-console.log(buscarReceita("Fubá"));
-// buscarReceita("Bolo")
-
-
-
-// const buscarReceita = (termo) => {
-//     const resultadoBusca = listaDeReceitas.
-//     return listaDeReceitas.titulo.indexOf(termo) != -1
-//     console.log(buscarReceita);
-// })
-
-// buscarReceita("Bolo")
-// const pessoasQueMoramNoArizona = pessoas.filter((pessoa) => {
-//     return pessoa.address.indexOf('Arizon') != -1
-// })

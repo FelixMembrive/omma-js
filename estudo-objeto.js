@@ -10,35 +10,7 @@ const listaDeReceitas = [{
         dificuldade: 'Simples',
         ingredientes: ['1 ovo', '1 colher de azeite', 'Sal a gosto'],
     },
-    {
-        id: 103,
-        titulo: 'Bolo de Fubá',
-        dificuldade: 'Simples',
-        ingredientes: ['3 ovo', '1 chícara de leite', '2 colheres de manteiga'],
-    },
-    {
-        id: 106,
-        titulo: 'Bolo de Fubá',
-        dificuldade: 'Simples',
-        ingredientes: ['3 ovo', '1 chícara de leite', '2 colheres de manteiga'],
-    },
-    {
-        id: 108,
-        titulo: 'Bolo de Fubá',
-        dificuldade: 'Simples',
-        ingredientes: ['3 ovo', '1 chícara de leite', '2 colheres de manteiga'],
-    },
-    {
-        id: 110,
-        titulo: 'Bolo de Fubá',
-        dificuldade: 'Simples',
-        ingredientes: ['3 ovo', '1 chícara de leite', '2 colheres de manteiga'],
-    },
 ]
-
-// console.log(
-//     listaDeReceitas[2].titulo
-// );
 
 function prorpiedadePorID(idReceita, propriedade) {
     // listaDeReceitas[id].(propriedade)
@@ -54,6 +26,19 @@ function prorpiedadePorID(idReceita, propriedade) {
 }
 
 prorpiedadePorID(102, "titulo")
+
+// Utilizado para percorrer os registros de um array
+listaDeReceitas.forEach((receita, index) => {
+    console.log(`${index} - ${receita.titulo}`);
+});
+
+
+
+
+
+
+
+
 
 // const indexReceita = listaDeReceitas.map(function(o) { return o.titulo; }).indexOf("Ovo frito");
 // console.log(indexReceita);
