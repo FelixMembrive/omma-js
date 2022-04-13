@@ -3,7 +3,7 @@ function exibirReceitas(listaAlvo = listaDeReceitas) {
     console.log("Receitas Cadastradas:");
     console.log("------------------------------------------------------------------------");
     listaAlvo.forEach((receita) => {
-        console.log(receita.titulo)
+        console.log(`${receita.titulo} (${receita.id})`)
         console.log("Lista de Ingredientes:");
         receita.ingredientes.forEach((ingrediente) => {
             console.log(`   - ${ingrediente}`)
@@ -33,16 +33,20 @@ console.log("Lista de Receitas com a 2ª e 3ª receitas Cadastradas");
 console.log("------------------------------------------------------------------------");
 
 const cadastrarReceita = (id, titulo, dificuldade, ingredientes, preparo, link, vegano) => {
-    listaDeReceitas.push({
+    const novaReceita = {
         id,
         titulo,
         dificuldade,
         ingredientes,
         preparo,
         link,
-        vegano
-    })
+        vegano,
+    };
+    listaDeReceitas.push(novaReceita)
+    console.log(`Cadastro da receita ${titulo} feito com sucesso!`);
 }
+
+
 
 cadastrarReceita(
     2,
@@ -55,7 +59,7 @@ cadastrarReceita(
 cadastrarReceita(
     3,
     "Bolo de Fubá",
-    "Simples", ["3 ovo", "1 chícara de leite", "2 colheres de manteiga"],
+    "Simples", ["3 ovos", "1 chícara de leite", "2 colheres de manteiga"],
     "Bata tudo e leve ao forno",
     "https://app.gama.academy/",
     true, )
@@ -67,8 +71,8 @@ console.log("Lista de Receitas com os id(s) existente(s) deletado(s)");
 console.log("------------------------------------------------------------------------");
 
 function deletarReceita(idDeletar) {
-    const indexReceita = listaDeReceitas.map((receita) => { return receita.id; }).indexOf(idDeletar);
-
+    // const indexReceita = listaDeReceitas.map((receita) => { return receita.id; }).indexOf(idDeletar);
+    const indexReceita = listaDeReceitas.findIndex((receita) => receita.id === idDeletar);
     if (indexReceita == -1) {
         console.log(`Receita de id: ${idDeletar} não encontrada`)
     } else {
@@ -81,43 +85,58 @@ deletarReceita(2)
 deletarReceita(3)
 exibirReceitas()
 
+cadastrarReceita(
+    5,
+    "Ovo frito",
+    "Simples", ["1 ovo", "1 colher de azeite", "Sal a gosto"],
+    "Quebre o ovo em um copo americano, jogue sal, e leve à frigideira.",
+    "https://google.com",
+    false, )
+
+cadastrarReceita(
+    6,
+    "Bolo de Fubá",
+    "Simples", ["3 ovos", "1 chícara de leite", "2 colheres de manteiga"],
+    "Bata tudo e leve ao forno",
+    "https://app.gama.academy/",
+    true, )
+
 
 
 const buscarReceita = (termo) => {
     const resultadoBusca = listaDeReceitas.filter((receita) => {
         return (receita.titulo.indexOf(termo) != -1);
     })
-<<<<<<< HEAD:index-sup2.js
-    console.log(resultadoBusca.receita);
-}
-
-buscarReceita("Quente")
-
-console.log(listaDeReceitas[1]);
-=======
     console.log("------------------------------------------------------------------------");
     console.log(`Buscar por "${termo}":`);
     exibirReceitas(resultadoBusca)
 }
 
-buscarReceita("o")
+buscarReceita("ovo")
 
-const atualizarReceita = (id, prop, alteracao) => {
-    const indice = listaDeReceitas.findIndex((receita) => receita.id === id);
-    if (indice === -1) {
-        return console.log(`Identificador ${id} não encontrado`);
-    } else if (listaDeReceitas[indice][prop]) {
-        listaDeReceitas[indice][prop] = alteracao;
-        return console.log("Receita alterada com sucesso!");
-    }
-    return console.log(`categoria ${prop} não encontrada na receita de id ${id}`);
-};
+// const atualizarReceita = (id, prop, alteracao) => {
 
-atualizarReceita(1, "titulo", "Cachorro muito quente")
+//     const indice = listaDeReceitas.findIndex((receita) => receita.id === id);
+//     if (indice === -1) {
+//         return console.log(`Identificador ${id} não encontrado`);
+//     }
+//     const conteudoPropAntiga = listaDeReceitas[indice][prop]
+//     if (listaDeReceitas[indice][prop]) {
+//         listaDeReceitas[indice][prop] = alteracao;
+//         return console.log(
+//             `Receita ${listaDeReceitas[indice].titulo} alterada com sucesso!
+//             de:
+//             ${conteudoPropAntiga}
+//             para:
+//             ${alteracao}`);
+//     }
+//     return console.log(`A categoria "${prop}" não foi encontrada na receita de id "${id}"`);
+// };
 
-exibirReceitas(listaDeReceitas)
+// atualizarReceita(1, "titulo", "Cachorro muito quente")
 
-listaDeReceitas[0].titulo = "renomeado"
+// exibirReceitas(listaDeReceitas)
 
-console.log(listaDeReceitas[0]);
->>>>>>> 6ade8a72de2ec4712f8bcb29600fe17908ca0d9d:index.js
+// atualizarReceita(8, "titulo", "Cachorro muito quente")
+// atualizarReceita(5, "Título", "Bolinho de Fubá")
+// atualizarReceita(6, "preparo", "Bata tudo e leve ao forno e deixe por 40min.")
