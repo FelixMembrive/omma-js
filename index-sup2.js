@@ -1,8 +1,8 @@
-function exibirReceitas() {
+function exibirReceitas(listaAlvo = listaDeReceitas) {
     console.log("------------------------------------------------------------------------");
     console.log("Receitas Cadastradas:");
     console.log("------------------------------------------------------------------------");
-    listaDeReceitas.forEach((receita) => {
+    listaAlvo.forEach((receita) => {
         console.log(receita.titulo)
         console.log("Lista de Ingredientes:");
         receita.ingredientes.forEach((ingrediente) => {
@@ -70,26 +70,54 @@ function deletarReceita(idDeletar) {
     const indexReceita = listaDeReceitas.map((receita) => { return receita.id; }).indexOf(idDeletar);
 
     if (indexReceita == -1) {
-        console.log("Receita não encontrada")
+        console.log(`Receita de id: ${idDeletar} não encontrada`)
     } else {
         listaDeReceitas.splice(indexReceita, 1)
-        console.log("Receita exluída")
+        console.log(`Receita de id: ${idDeletar} exluída com sucesso!`)
     }
 }
 deletarReceita(7)
+deletarReceita(2)
+deletarReceita(3)
 exibirReceitas()
 
-console.log("------------------------------------------------------------------------");
-console.log("Buscar");
-console.log("------------------------------------------------------------------------");
+
 
 const buscarReceita = (termo) => {
     const resultadoBusca = listaDeReceitas.filter((receita) => {
         return (receita.titulo.indexOf(termo) != -1);
     })
+<<<<<<< HEAD:index-sup2.js
     console.log(resultadoBusca.receita);
 }
 
 buscarReceita("Quente")
 
 console.log(listaDeReceitas[1]);
+=======
+    console.log("------------------------------------------------------------------------");
+    console.log(`Buscar por "${termo}":`);
+    exibirReceitas(resultadoBusca)
+}
+
+buscarReceita("o")
+
+const atualizarReceita = (id, prop, alteracao) => {
+    const indice = listaDeReceitas.findIndex((receita) => receita.id === id);
+    if (indice === -1) {
+        return console.log(`Identificador ${id} não encontrado`);
+    } else if (listaDeReceitas[indice][prop]) {
+        listaDeReceitas[indice][prop] = alteracao;
+        return console.log("Receita alterada com sucesso!");
+    }
+    return console.log(`categoria ${prop} não encontrada na receita de id ${id}`);
+};
+
+atualizarReceita(1, "titulo", "Cachorro muito quente")
+
+exibirReceitas(listaDeReceitas)
+
+listaDeReceitas[0].titulo = "renomeado"
+
+console.log(listaDeReceitas[0]);
+>>>>>>> 6ade8a72de2ec4712f8bcb29600fe17908ca0d9d:index.js
