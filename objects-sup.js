@@ -245,12 +245,12 @@ console.log(pessoasNaoAtivas.length)
 
 
 
-
+console.log("aqui");
 //Procurando por um texto específico e retornando o indice do Array que o contém
 const pessoasQueMoramNoArizona = pessoas.filter((pessoa) => {
-    return pessoa.address.indexOf('Arizon') != -1
-})
-console.log(pessoasQueMoramNoArizona.length);
+        return pessoa.address.indexOf('Arizon') != -1
+    })
+    // console.log(pessoasQueMoramNoArizona.length);
 
 
 

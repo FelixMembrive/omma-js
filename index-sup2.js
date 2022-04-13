@@ -67,7 +67,7 @@ console.log("Lista de Receitas com os id(s) existente(s) deletado(s)");
 console.log("------------------------------------------------------------------------");
 
 function deletarReceita(idDeletar) {
-    const indexReceita = listaDeReceitas.map(function(o) { return o.id; }).indexOf(idDeletar);
+    const indexReceita = listaDeReceitas.map((receita) => { return receita.id; }).indexOf(idDeletar);
 
     if (indexReceita == -1) {
         console.log("Receita não encontrada")
@@ -85,9 +85,11 @@ console.log("-------------------------------------------------------------------
 
 const buscarReceita = (termo) => {
     const resultadoBusca = listaDeReceitas.filter((receita) => {
-        return receita.titulo.indexOf(termo) != -1
+        return (receita.titulo.indexOf(termo) != -1);
     })
-    console.log(resultadoBusca);
+    console.log(resultadoBusca.receita);
 }
 
 buscarReceita("Quente")
+
+console.log(listaDeReceitas[1]);
