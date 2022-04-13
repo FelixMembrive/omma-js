@@ -215,7 +215,7 @@ pessoas.forEach((pessoa, index) => {
 });
 
 
-//Cria uma nova Lista (map serve para criar uma nova Array manter a Array original)
+//Cria uma nova Lista (map serve para criar uma nova Array e manter a Array original)
 const novaPessoas = pessoas.map((pessoa) => {
     return {
         nome: pessoa.name,
@@ -227,9 +227,7 @@ console.log(novaPessoas);
 
 
 
-
-
-//Retornar o objeto por uma condição de negação
+//Retornar o objeto por uma condição
 const pessoasAtivas = pessoas.filter((pessoa) => {
         return pessoa.isActive
     })
@@ -245,12 +243,12 @@ console.log(pessoasNaoAtivas.length)
 
 
 
-
+console.log("aqui");
 //Procurando por um texto específico e retornando o indice do Array que o contém
 const pessoasQueMoramNoArizona = pessoas.filter((pessoa) => {
     return pessoa.address.indexOf('Arizon') != -1
 })
-console.log(pessoasQueMoramNoArizona.length);
+console.log(pessoasQueMoramNoArizona[0]._id);
 
 
 

@@ -1,8 +1,8 @@
-function exibirReceitas() {
+function exibirReceitas(listaEscopo) {
     console.log("------------------------------------------------------------------------");
     console.log("Receitas Cadastradas:");
     console.log("------------------------------------------------------------------------");
-    listaDeReceitas.forEach((receita) => {
+    listaEscopo.forEach((receita) => {
         console.log(receita.titulo)
         console.log("Lista de Ingredientes:");
         receita.ingredientes.forEach((ingrediente) => {
@@ -26,7 +26,7 @@ const listaDeReceitas = [{
     vegano: false,
 }, ]
 
-exibirReceitas()
+exibirReceitas(listaDeReceitas)
 
 console.log("------------------------------------------------------------------------");
 console.log("Lista de Receitas com a 2ª e 3ª receitas Cadastradas");
@@ -60,7 +60,7 @@ cadastrarReceita(
     "https://app.gama.academy/",
     true, )
 
-exibirReceitas()
+exibirReceitas(listaDeReceitas)
 
 console.log("------------------------------------------------------------------------");
 console.log("Lista de Receitas com os id(s) existente(s) deletado(s)");
@@ -77,7 +77,9 @@ function deletarReceita(idDeletar) {
     }
 }
 deletarReceita(7)
-exibirReceitas()
+deletarReceita(2)
+deletarReceita(3)
+exibirReceitas(listaDeReceitas)
 
 console.log("------------------------------------------------------------------------");
 console.log("Buscar");
@@ -87,7 +89,7 @@ const buscarReceita = (termo) => {
     const resultadoBusca = listaDeReceitas.filter((receita) => {
         return receita.titulo.indexOf(termo) != -1
     })
-    console.log(resultadoBusca);
+    exibirReceitas(resultadoBusca)
 }
 
-buscarReceita("Quente")
+buscarReceita("o")
