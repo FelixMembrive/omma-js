@@ -14,18 +14,18 @@ const listaDeReceitas = [{
 
 function prorpiedadePorID(idReceita, propriedade) {
     // listaDeReceitas[id].(propriedade)
-    var indexReceita = listaDeReceitas.map(function(o) { return o.id; }).indexOf(idReceita);
+    const indexReceita = listaDeReceitas.map(function(o) { return o.id; }).indexOf(idReceita);
     console.log(idReceita, indexReceita, propriedade);
     console.log(typeof listaDeReceitas[indexReceita].titulo)
     console.log(typeof propriedade)
     console.log(listaDeReceitas[1].titulo)
     console.log(listaDeReceitas[1])
     console.log(listaDeReceitas[indexReceita])
-    console.log(listaDeReceitas[indexReceita].prorpiedade)
+    console.log(listaDeReceitas[indexReceita][propriedade])
 
 }
 
-prorpiedadePorID(102, "titulo")
+prorpiedadePorID(102, "dificuldade")
 
 // Utilizado para percorrer os registros de um array
 listaDeReceitas.forEach((receita, index) => {

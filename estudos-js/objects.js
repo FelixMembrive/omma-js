@@ -210,8 +210,8 @@ const pessoas = [{
 
 
 // Retornar uma propriedade procurando pelo ID
-pessoas.forEach((pessoa, index) => {
-    console.log(`${index} - ${pessoa.name}`);
+pessoas.forEach((pessoa, m, na, no) => {
+    console.log(`${m} - ${na} - ${no} - ${pessoa.name}`);
 });
 
 
@@ -244,9 +244,15 @@ console.log(pessoasNaoAtivas.length)
 //Procurando por um texto específico e retornando o indice do Array que o contém
 const pessoasQueMoramNoArizona = pessoas.filter((pessoa) => {
 
-    return pessoa.address.indexOf('Arizon') != -1
+    return newFunction()
+
+    function newFunction() {
+        return pessoa.address.indexOf('Arizon') != -1;
+    }
 })
-console.log(pessoasQueMoramNoArizona[0]._id);
+
+console.log("aqui");
+console.log(pessoasQueMoramNoArizona);
 
 
 

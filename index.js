@@ -103,40 +103,71 @@ cadastrarReceita(
 
 
 
-const buscarReceita = (termo) => {
-    const resultadoBusca = listaDeReceitas.filter((receita) => {
-        return (receita.titulo.indexOf(termo) != -1);
-    })
-    console.log("------------------------------------------------------------------------");
-    console.log(`Buscar por "${termo}":`);
-    exibirReceitas(resultadoBusca)
+// const buscarReceita = (termo) => {
+//     const resultadoBusca = listaDeReceitas.filter((receita) => {
+//         return (receita.titulo.indexOf(termo) != -1 ? (receita.titulo.indexOf(termo) != -1) : (receita.titulo.indexOf(termo)));
+//     })
+//     console.log("------------------------------------------------------------------------");
+//     console.log(`Buscar por "${termo}":`);
+//     exibirReceitas(resultadoBusca)
+// }
+
+console.log("------------------------------------------------------------------------");
+console.log("buscarReceita");
+console.log("------------------------------------------------------------------------");
+
+
+// const busca = listaDeReceitas[0].indexOf("preparo")
+// console.log(busca);
+
+function newFunction() {
+    console.log(listaDeReceitas.titulo.indexOf('a') != -1);
 }
 
-buscarReceita("ovo")
+newFunction()
 
-// const atualizarReceita = (id, prop, alteracao) => {
 
-//     const indice = listaDeReceitas.findIndex((receita) => receita.id === id);
-//     if (indice === -1) {
-//         return console.log(`Identificador ${id} não encontrado`);
-//     }
-//     const conteudoPropAntiga = listaDeReceitas[indice][prop]
-//     if (listaDeReceitas[indice][prop]) {
-//         listaDeReceitas[indice][prop] = alteracao;
-//         return console.log(
-//             `Receita ${listaDeReceitas[indice].titulo} alterada com sucesso!
-//             de:
-//             ${conteudoPropAntiga}
-//             para:
-//             ${alteracao}`);
-//     }
-//     return console.log(`A categoria "${prop}" não foi encontrada na receita de id "${id}"`);
-// };
 
-// atualizarReceita(1, "titulo", "Cachorro muito quente")
+// const buscarReceita = (termo) => {
+//     const resultadoBusca = listaDeReceitas.filter((receita) => {
+//         return (receita.titulo.indexOf(termo) != -1)
 
-// exibirReceitas(listaDeReceitas)
+//     }) { `${exibirReceitas(resultadoBusca)}` }
 
-// atualizarReceita(8, "titulo", "Cachorro muito quente")
-// atualizarReceita(5, "Título", "Bolinho de Fubá")
-// atualizarReceita(6, "preparo", "Bata tudo e leve ao forno e deixe por 40min.")
+//     console.log("------------------------------------------------------------------------");
+// }
+
+
+// buscarReceita("o")
+
+
+console.log("------------------------------------------------------------------------");
+console.log("Atualizar Receita");
+console.log("------------------------------------------------------------------------");
+
+
+const atualizarReceita = (id, prop, alteracao) => {
+    const indice = listaDeReceitas.findIndex((receita) => receita.id === id);
+    if (indice === -1) {
+        return console.log(`Identificador ${id} não encontrado`);
+    }
+    const conteudoPropAntiga = listaDeReceitas[indice][prop]
+    if (listaDeReceitas[indice][prop]) {
+        listaDeReceitas[indice][prop] = alteracao;
+        return console.log(
+            `Receita ${listaDeReceitas[indice].titulo} alterada com sucesso!
+            de:
+            ${conteudoPropAntiga}
+            para:
+            ${alteracao}`);
+    }
+    return console.log(`A categoria "${prop}" não foi encontrada na receita de id "${id}"`);
+};
+
+atualizarReceita(1, "titulo", "Cachorro muito quente")
+
+exibirReceitas(listaDeReceitas)
+
+atualizarReceita(8, "titulo", "Cachorro muito quente")
+atualizarReceita(5, "Título", "Bolinho de Fubá")
+atualizarReceita(6, "preparo", "Bata tudo e leve ao forno e deixe por 40min.")
