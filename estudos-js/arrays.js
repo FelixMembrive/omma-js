@@ -16,7 +16,6 @@ const pessoas = [{
             "minim",
             "proident",
         ],
-
         friends: [{
                 id: 0,
                 name: "Potts Jacobs",
@@ -207,64 +206,68 @@ const pessoas = [{
         favoriteFruit: "apple",
     },
 ];
+// Arrays methods
 
+// const arrayDiversos = [
+//   1, //0
+//   2, //1
+//   3, //2
+//   4, //3
+//   5, //4
+//   "Francis", //5
+//   "Taii", //6
+//   { marca: "fiat", modelo: "Uno" }, //7
+//   ["azul", "amarelo"], //8
+// ];
 
+// for (let i = 0; i < pessoas.length; i++) {
+//   const pessoa = pessoas[i];
 
-// Retornar uma propriedade procurando pelo ID
-pessoas.forEach((value, index, array) => {
-    console.log(` ${value.name}`);
+//   console.log(`${i} - ${pessoa.name}`);
+// }
+
+// Utilizado para percorrer os registros de um array
+// pessoas.forEach((pessoa, index) => {
+//   // console.log(`${index} - ${pessoa.name}`);
+//   // pessoa.tags.forEach((tag) => console.log(tag));
+// });
+
+// Retorna uma nova lista
+// const novaPessoas = pessoas.map((pessoa) => {
+//   return {
+//     nome: pessoa.name,
+//     idade: pessoa.age,
+//     opcao: pessoa.gender,
+//   };
+// });
+
+// console.log(novaPessoas);
+
+// const pessoasAtivas = pessoas.filter((pessoa) => {
+//   return pessoa.isActive;
+// });
+
+// const pessoasInativas = pessoas.filter((pessoa) => {
+//   return !pessoa.isActive;
+// });
+
+// console.log(pessoasAtivas.length);
+// console.log(pessoasInativas.length);
+
+// const pessoasQueMoramNoArizona = pessoas.filter((pessoa) => {
+//   // return pessoa.tags.filter((tag) => tag === "commodo").length > 0;
+//   return pessoa.address.toLowerCase().indexOf("461") != -1;
+// });
+
+// console.log(pessoasQueMoramNoArizona.length);
+
+const indice = pessoas.findIndex((pessoa) => {
+    return pessoa._id === "6254a526a0a33b6b7954879c";
 });
 
-
-//Cria uma nova Lista (map serve para criar uma nova Array e manter a Array original)
-const novaPessoas = pessoas.map((pessoa) => {
-    return {
-        nome: pessoa.name,
-        idade: pessoa.age,
-        opcao: pessoa.gender,
-    };
-})
-console.log(novaPessoas);
-
-
-
-//Retornar o objeto por uma condição
-const pessoasAtivas = pessoas.filter((pessoa) => {
-        return pessoa.isActive
-    })
-    //Retornar o objeto por uma condição de negação
-const pessoasNaoAtivas = pessoas.filter((pessoa) => {
-        return !pessoa.isActive
-    })
-    //total do retorno acima
-console.log(pessoasAtivas.length)
-console.log(pessoasNaoAtivas.length)
-
-
-
-//Procurando por um texto específico e retornando o indice do Array que o contém
-const pessoasQueMoramNoArizona = pessoas.filter((pessoa) => {
-
-    return newFunction()
-
-    function newFunction() {
-        return pessoa.address.indexOf('Arizon') != -1;
-    }
-})
-
-console.log("aqui");
-console.log(pessoasQueMoramNoArizona);
-
-
-
-
-
-
-
-// Excluindo um objeto do Array
+console.log(indice);
 console.log(pessoas.length);
-const indice = pessoas.findIndex((pessoa) => {
-    return pessoa._id === "6254a52665680840299afb4d"
-})
-pessoas.splice(indice, 1)
+
+pessoas.splice(indice, 1);
+
 console.log(pessoas.length);
