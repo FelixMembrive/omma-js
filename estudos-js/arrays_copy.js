@@ -266,7 +266,7 @@ const exibirHomens = () => {
         return pessoa.gender == "male"
     })
     const nomeHomens = homens.forEach((homem, id) => {
-        return homem.name
+        console.log(homem.name);
     })
     console.log(nomeHomens);
 }
