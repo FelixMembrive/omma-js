@@ -275,17 +275,36 @@ const pessoas = [{
 // exibirHomens()
 
 
+// const exibirHomens = () => {
+//     const homens = pessoas.filter((pessoa) => {
+//         return pessoa.gender == "male"
+//     })
+//     const listaNomesHomens = homens.map((Homem) => {
+//         return {
+//             nome: Homem.name,
+//             amigos: Homem.friends
+//         }
+//     })
+//     const listaDeAmigos = listaNomesHomens.map((amigo) => {
+//         return {
+//             nome: amigo.amigos
+//         }
+//     })
+//     console.log(homens)
+//     console.log(listaNomesHomens);
+//     console.log(listaDeAmigos);
+//     console.log(listaNomesHomens.length);
+
+// }
+// exibirHomens()
+
+
+
+
 const exibirHomens = () => {
     const homens = pessoas.filter((pessoa) => {
         return pessoa.gender == "male"
     })
-    const listaNomesHomens = homens.map((nomeHomem) => {
-        return {
-            nome: nomeHomem.name
-        }
-    })
-    console.log(listaNomesHomens);
-    console.log(listaNomesHomens.length);
-
+    console.log(homens)
 }
 exibirHomens()
