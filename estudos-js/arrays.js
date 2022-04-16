@@ -261,14 +261,31 @@ const pessoas = [{
 
 // console.log(pessoasQueMoramNoArizona.length);
 
+// const exibirHomens = () => {
+//     const homens = pessoas.filter((pessoa) => {
+//         return pessoa.gender == "male"
+//     })
+//     const nomeHomens = homens.forEach((homem, id) => {
+//         const { name } = homem
+//         return { name }
+//     })
+//     console.log(nomeHomens);
+// }
+
+// exibirHomens()
+
+
 const exibirHomens = () => {
     const homens = pessoas.filter((pessoa) => {
         return pessoa.gender == "male"
     })
-    const nomeHomens = homens.forEach((homem, id) => {
-        return homem.name
+    const listaNomesHomens = homens.map((nomeHomem) => {
+        return {
+            nome: nomeHomem.name
+        }
     })
-    console.log(nomeHomens);
-}
+    console.log(listaNomesHomens);
+    console.log(listaNomesHomens.length);
 
+}
 exibirHomens()
